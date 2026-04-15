@@ -1,0 +1,268 @@
+:root {
+  --bg: #f7f3ea;
+  --surface: #fffdf8;
+  --surface-strong: #162119;
+  --primary: #bf6b17;
+  --primary-dark: #8b4c0c;
+  --text: #243126;
+  --muted: #5d695f;
+  --border: #decfb8;
+  --shadow: 0 18px 40px rgba(35, 27, 15, 0.12);
+  --radius: 1.25rem;
+  --max-width: 1120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(191, 107, 23, 0.12), transparent 35%),
+    linear-gradient(180deg, #f6f0e3 0%, var(--bg) 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(92%, var(--max-width));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 253, 248, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(36, 49, 38, 0.08);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--primary-dark);
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.main-nav a {
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  color: var(--primary-dark);
+  border-color: var(--primary);
+}
+
+.hero,
+.section {
+  padding: 4.5rem 0;
+}
+
+.hero-grid,
+.info-grid,
+.tips-layout,
+.footer-layout {
+  display: grid;
+  gap: 2rem;
+}
+
+.hero-grid {
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 12ch;
+  margin-bottom: 1rem;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+}
+
+h2 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+.hero-copy,
+.section-heading p,
+.card p,
+.seo-box p,
+footer p {
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.button-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.button-secondary {
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.hero-card,
+.card,
+.seo-box {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.hero-card ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.section-alt {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.section-heading {
+  max-width: 60rem;
+  margin-bottom: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  min-height: 250px;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(191, 107, 23, 0.12);
+  color: var(--primary-dark);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.info-grid,
+.tips-layout,
+.footer-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tips-list {
+  padding-left: 1.25rem;
+}
+
+.site-footer {
+  padding: 2rem 0 3rem;
+  color: #f8f2e8;
+  background: var(--surface-strong);
+}
+
+.site-footer a {
+  color: #f2c98e;
+}
+
+@media (max-width: 767px) {
+  .hero,
+  .section {
+    padding: 3.2rem 0;
+  }
+
+  .nav-wrapper,
+  .hero-grid,
+  .info-grid,
+  .tips-layout,
+  .footer-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-wrapper {
+    display: block;
+    text-align: center;
+  }
+
+  .logo {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .main-nav {
+    gap: 0.8rem 1rem;
+  }
+
+  h1 {
+    max-width: 100%;
+  }
+}
