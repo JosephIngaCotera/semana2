@@ -66,10 +66,25 @@ img {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: 0.04em;
   color: var(--primary-dark);
+}
+
+.logo img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 0.9rem;
+  box-shadow: 0 10px 18px rgba(35, 27, 15, 0.12);
+}
+
+.logo span {
+  display: inline-block;
 }
 
 .main-nav {
@@ -363,8 +378,9 @@ footer p {
   }
 
   .logo {
-    display: inline-block;
+    display: inline-flex;
     margin-bottom: 1rem;
+    justify-content: center;
   }
 
   .main-nav {
